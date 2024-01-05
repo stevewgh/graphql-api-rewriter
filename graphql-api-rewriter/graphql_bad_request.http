@@ -1,0 +1,13 @@
+GRAPHQL http://localhost:5210/graphql
+
+query bad_request($arg : String) {
+    book(nonOptionalArgument: "value,", optionalArgument: $arg) {
+            this_field_doesnt_exist
+            title
+    }
+}
+
+{
+  "arg": "varValue"
+}
+###
